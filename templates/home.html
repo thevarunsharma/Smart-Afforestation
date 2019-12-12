@@ -1,24 +1,27 @@
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Home</title>
   </head>
   <body>
+    <h1>Smart Afforestation Agent</h1>
     <form action="" method="POST">
       <table>
         <tr>
-          <td>AQI: </td><td><input type="number" name="AQI" required></td>
+          <td>Air Quality Index (AQI): </td><td><input type="number" name="AQI" required></td>
         </tr>
         <tr>
-          <td>Area Limit: </td><td><input type="number" name="area" min="0" required></td>
+          <td>Area available for plantation: </td><td><input type="number" name="area" min="0" required></td>
         </tr>
         <tr>
-          <td>Cost Limit: </td><td><input type="number" name="cost" min="0" required></td>
+          <td>Cost Budget available: </td><td><input type="number" name="cost" min="0" required></td>
         </tr>
         <tr>
-          <td>Population: </td><td><input type="number" name="population" min="0" required></td>
+          <td>Population of Region: </td><td><input type="number" name="population" min="0" required></td>
         </tr>
       </table>
-      <input type="submit" value="Get Result">
+      <input type="submit" value="Go Green!">
     </form>
   </body>
 </html>
