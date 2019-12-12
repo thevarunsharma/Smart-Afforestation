@@ -1,28 +1,28 @@
 Plant Species,Common name,Life form,Zone I,Zone II,Zone III,Zone IV,Canopy diameter (in m),Utility,Cost
 Azadirachta indica,Neem,ET,T,T,T,T,8,5,3500
 Albizia lebbeck,Siris,ET,T,T,T,T,6,3,4000
-Bougainvillea spp.,Boganvilliea,ES,T,T,T,T,3,2,3000
+Bougainvillea spp.,Bougainvillea,ES,T,T,T,T,3,2,1000
 Mangifera indica,Mango,ET,T,T,T,T,8,5,5000
-Ficus bengalensis,Banyan,ET,T,T,T,T,12,5,4000
-Murraya spp.,Murraya,ET,NA,T,T,T,2,3,4000
-Moringa oleifera,Moringa,DT,T,T,T,T,3,4,3500
+Ficus bengalensis,Banyan,ET,T,T,T,T,14,5,4000
+Murraya spp.,Murraya,ET,NA,T,T,T,2,3,2000
+Moringa oleifera,Moringa,DT,T,T,T,T,6,4,3500
 Ficus religiosa,Peepal,ET,T,T,T,T,8,5,2000
 Aagle marmelos,Bel,ET,M,T,T,T,4,4,3500
 Psidium guajava,Guava,ES,M,T,T,T,5,4,4500
 Tamarindus indica,Tamarind,ET,T,T,M,M,8,5,3500
-Hibiscus rosasinensis,Hibiscus Gurhal,ES,M,M,T,T,2,5,4000
-Alstonia scholaris,Dita bark,ET,M,IM,T,T,8,4,8000
+Hibiscus rosasinensis,Hibiscus Gurhal,ES,M,M,T,T,2,5,1000
+Alstonia scholaris,Dita bark,ET,M,IM,T,T,8,4,5000
 Holoptelea integrifolia,Indian Elm,ET,T,IM,NA,NA,6,4,2500
 Polyalthia longifolia,False Ashoka,ET,IM,M,T,IM,4,3,1500
-Cardia sebestena,Cordia,ET,IM,M,IM,S,6,2,4000
-Tectona grandis,Teak,ET,IM,M,S,IM,5,1,4000
-Eucalyptus spp.,Eucalyptus,ET,NA,S,S,M,5,2,3000
-Rosa indica,Rose,ES,IM,IM,S,S,2,2,1900
+Cardia sebestena,Cordia,ET,IM,M,IM,S,6,2,2000
+Tectona grandis,Teak,ET,IM,M,S,IM,5,2,4000
+Eucalyptus spp.,Eucalyptus,ET,NA,S,S,M,5,4,3000
+Rosa indica,Rose,ES,IM,IM,S,S,2,4,1900
 Butea monosperma,Palash,DT,S,S,S,S,8,4,3000
 Casuarina equisetifolia,Casuarina,ET,NA,S,S,S,8,3,3000
-Cercocarpus ledifolius,Mahogany,ET/S,S,S,S,S,12,2,3000
+Cercocarpus ledifolius,Mahogany,ET/S,S,S,S,S,12,3,3000
 Delbergia sissoo,Indian Rosewood,ET,NA,S,S,S,7,3,3500
 Phyllanthus emblica,Amla,ET,S,S,S,S,7,5,4000
-Saraca indica,Ashok,ET,NA,S,S,NA,5,4,3500
-Helianthus annuus,Sunflower,ES,NA,S,S,S,2,4,4000
-Acacia arabica,Babool,ET,S,S,IM,M,6,5,5000
+Saraca indica,Ashok,ET,NA,S,S,NA,5,6,3500
+Helianthus annuus,Sunflower,ES,NA,S,S,S,2,3,4000
+Acacia arabica,Babool,ET,S,S,IM,M,6,7,4000

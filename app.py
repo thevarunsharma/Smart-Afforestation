@@ -16,9 +16,10 @@ def show_result():
     area_lt = int(data.get('area'))
     cost_lt = int(data.get('cost'))
     population = int(data.get('population'))
+    runtime = int(data.get('runtime'))
     # smart planter agent
     agent = TreePlanterGA(AQI, area_lt, cost_lt, population)
-    agent.run_search()
+    agent.run_search(runtime=runtime)
     result = agent.get_results()
     return render_template('result.html', trees=result['trees'], score=result['score'],
                             area_used=result['area'], cost_used=result['cost'], population=population,

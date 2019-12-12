@@ -5,30 +5,24 @@
   <body>
     <p><a href='/'>Back</a></p>
     <table>
-      <tr>
-        <td>Tree: </td><td>{{trees}}</td>
-      </tr>
-      <tr>
         <td>Score: </td><td>{{score}}</td>
       </tr>
       <tr>
-        <td>Area used: </td><td>{{area_used}}</td>
+        <td>Area used: </td><td>{{area_used}} / {{area_limit}}</td>
       </tr>
       <tr>
-        <td>Cost used: </td><td>{{cost_used}}</td>
-      </tr>
-      <tr>
-        <td>Population: </td><td>{{population}}</td>
+        <td>Cost used: </td><td>{{cost_used}} / {{cost_limit}}</td>
       </tr>
       <tr>
         <td>AQI: </td><td>{{AQI}}</td>
       </tr>
       <tr>
-        <td>Area limit: </td><td>{{area_limit}}</td>
-      </tr>
-      <tr>
-        <td>Cost limit: </td><td>{{cost_limit}}</td>
+        <td>Population: </td><td>{{population}}</td>
       </tr>
     </table>
+    {% for tree in trees %}
+      <img src="{{url_for('static', filename='{}.jpg'.format(tree))}}" width="200vw">
+      <h2>{{tree}} : {{trees[tree]}}</h2>
+    {% endfor %}
   </body>
 </html>

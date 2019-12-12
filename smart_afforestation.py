@@ -3,6 +3,7 @@ from math import isclose
 from pickle import load
 import random
 from threading import Thread
+import time
 
 class TreePlanterGA:
     with open("./data/tree_idx.dat", "rb") as __fh:
@@ -55,7 +56,7 @@ class TreePlanterGA:
         else:
             return 'Hazardous', 'Zone I'
 
-    def __get_score(self, w1=10, w2=5):
+    def __get_score(self, w1=20, w2=5):
         tree_data = __class__.tree_data
         for i in range(__class__.tree_types_count):
             # f = w1*pi + w2*ui
@@ -109,8 +110,10 @@ class TreePlanterGA:
         self.total_fit[i] = __class__.get_fitness(self.chromosomes[i], self.score, self.sample_set, self.cost,
                                                   self.area, self.cost_limit, self.area_limit, self.population)
 
-    def run_search(self, iters=3000, max_rep=20, verbose=1):
-        for t in range(iters):
+    def run_search(self, runtime=5, max_rep=20, verbose=1):
+        t_end = time.time() + runtime
+        t = 0
+        while time.time() <= t_end:
             for i in range(self.no_of_chromosomes):
                 self.threads[i] = Thread(target=self.__assign_fitness, args=(i,))
                 self.threads[i].start()
@@ -129,7 +132,7 @@ class TreePlanterGA:
             if isclose(curr_best_fit, self.last_fit, rel_tol=0.1):
                 self.rep_count += 1
             self.last_fit = curr_best_fit
-
+            t += 1
             if self.rep_count >= max_rep:
                 self.rep_count = 0
                 self.__init_chromosomes()
