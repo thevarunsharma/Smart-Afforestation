@@ -5,11 +5,11 @@ import random
 from threading import Thread
 
 class TreePlanterGA:
-    with open("./data/tree_idx.dat", "rb") as fh:
-        tree_idx = load(fh)
+    with open("./data/tree_idx.dat", "rb") as __fh:
+        tree_idx = load(__fh)
 
-    with open("./data/tree_info.dat", "rb") as fh:
-        tree_data = load(fh)
+    with open("./data/tree_info.dat", "rb") as __fh:
+        tree_data = load(__fh)
 
     tree_types_count = len(tree_data)
 
@@ -59,9 +59,10 @@ class TreePlanterGA:
         tree_data = __class__.tree_data
         for i in range(__class__.tree_types_count):
             # f = w1*pi + w2*ui
-            self.score[i] = w1*tree_data[i][self.Zone] + w2*tree_data[i]['Utility']
             self.area[i] = tree_data[i]['Area']
             self.cost[i] = tree_data[i]['Cost']
+            # pollution tolerance was per unit area, we covert them to per person per tree
+            self.score[i] = (w1*tree_data[i][self.Zone] + w2*tree_data[i]['Utility'])*self.area[i]
 
     def __get_sampling_set(self):
         self.minc, self.maxc = float('inf'), -float('inf')
@@ -93,22 +94,16 @@ class TreePlanterGA:
             self.chromosomes[X//2+i] = sorted_chrom[X//2-i-1]
 
     @staticmethod
-    def calculate_fitness(total_score, total_cost, total_area, cost_limit, area_limit,
-                          population, w1=1000, w2=1, w3=0.01):
-        f = w1*total_score/population + w2*(total_area - area_limit) + w3*(total_cost - cost_limit)
-        return f
-
-    @staticmethod
     def get_fitness(chromosome, score, sample_set, cost, area, cost_limit, area_limit, population):
         N = len(chromosome)
         total_cost = sum(cost[sample_set[i]] for i in range(N) if chromosome[i])
         total_area = sum(area[sample_set[i]] for i in range(N) if chromosome[i])
         if total_cost > cost_limit or total_area > area_limit:
             return -float('inf')
-        total_score = sum(score[sample_set[i]] for i in range(N) if chromosome[i])
-        total_fitness = __class__.calculate_fitness(total_score, total_cost, total_area,
-                                                    cost_limit, area_limit, population)
-        return total_fitness
+        # per capita
+        total_score = sum(score[sample_set[i]] for i in range(N) if chromosome[i])/population
+        fitness = 100*total_score
+        return fitness
 
     def __assign_fitness(self, i):
         self.total_fit[i] = __class__.get_fitness(self.chromosomes[i], self.score, self.sample_set, self.cost,
@@ -147,7 +142,7 @@ class TreePlanterGA:
             if self.best_chromosome[i]:
                 trees[__class__.tree_data[self.sample_set[i]]['Common name']] += 1
 
-        total_score = sum(self.score[__class__.tree_idx[t]]*trees[t] for t in trees)
+        total_score = sum(self.score[__class__.tree_idx[t]]*trees[t] for t in trees)/self.population
         used_area = sum(self.area[__class__.tree_idx[t]]*trees[t] for t in trees)
         used_cost = sum(self.cost[__class__.tree_idx[t]]*trees[t] for t in trees)
-        return dict(trees), total_score, used_area, used_cost
+        return {'trees': dict(trees), 'score': total_score, 'area': used_area, 'cost': used_cost}
