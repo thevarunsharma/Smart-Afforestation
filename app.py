@@ -19,7 +19,8 @@ def show_result():
     runtime = int(data.get('runtime'))
     # smart planter agent
     agent = TreePlanterGA(AQI, area_lt, cost_lt, population)
-    agent.run_search(runtime=runtime)
+    print("processing request...")
+    agent.run_search(runtime=runtime, verbose=0)
     result = agent.get_results()
     return render_template('result.html', trees=result['trees'], score=result['score'],
                             area_used=result['area'], cost_used=result['cost'], population=population,

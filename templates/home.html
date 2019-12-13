@@ -1,12 +1,13 @@
 <html>
   <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Home</title>
   </head>
   <body>
     <h1>Smart Afforestation Agent</h1>
-    <form action="" method="POST">
+    <form action="" method="POST" onsubmit="loaderWidget()">
       <table>
         <tr>
           <td>Air Quality Index (AQI): </td><td><input type="number" name="AQI" required></td>
@@ -26,5 +27,7 @@
       </table>
       <input type="submit" value="Go Green!">
     </form>
+    <center><div id="loader"></div></center>
+    <script type="text/javascript" src="{{url_for('static', filename='main.js')}}"></script>
   </body>
 </html>
