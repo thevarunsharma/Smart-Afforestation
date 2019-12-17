@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
-from smart_afforestation import TreePlanterGA
+from SmartAfforestation.smart_afforestation import TreePlanterGA
 
 app = Flask(__name__)
 
@@ -24,7 +24,7 @@ def show_result():
     result = agent.get_results()
     return render_template('result.html', trees=result['trees'], score=result['score'],
                             area_used=result['area'], cost_used=result['cost'], population=population,
-                            AQI=AQI, area_limit=area_lt, cost_limit=cost_lt)
+                            AQI=AQI, area_limit=area_lt, cost_limit=cost_lt, total_trees=sum(result['trees'].values()))
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
-app.run(debug=True)
+# app.run(debug=True)

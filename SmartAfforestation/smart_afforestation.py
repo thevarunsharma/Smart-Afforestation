@@ -6,10 +6,10 @@ from threading import Thread
 import time
 
 class TreePlanterGA:
-    with open("./data/tree_idx.dat", "rb") as __fh:
+    with open("./SmartAfforestation/data/tree_idx.dat", "rb") as __fh:
         tree_idx = load(__fh)
 
-    with open("./data/tree_info.dat", "rb") as __fh:
+    with open("./SmartAfforestation/data/tree_info.dat", "rb") as __fh:
         tree_data = load(__fh)
 
     tree_types_count = len(tree_data)

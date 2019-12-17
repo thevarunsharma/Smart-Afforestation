@@ -25,7 +25,7 @@ tr {
 }
 
 td {
-    width: 350px;
+    width: 310px;
     align-self: center;
     margin: auto;
     text-align: center;
@@ -47,6 +47,7 @@ td {
     padding-top: 15px;
     font-weight: 500;
     color: #26282a;
+    text-shadow: white 1px 1px;
 }
 
 .vals {

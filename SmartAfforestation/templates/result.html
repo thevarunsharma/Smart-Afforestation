@@ -5,6 +5,9 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <link rel='icon' href="{{url_for('static', filename='logo.png')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
     <img src='{{url_for("static", filename="greencity.jpg")}}' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
@@ -24,6 +27,9 @@
       </tr>
       <tr>
         <td class="tags"><strong>Population</strong></td><td class="vals">{{population}}</td>
+      </tr>
+      <tr>
+        <td class="tags"><strong>Total Trees</strong></td><td class="vals">{{total_trees}}</td>
       </tr>
     </table></center>
     <div class='images'>
