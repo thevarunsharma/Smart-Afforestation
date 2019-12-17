@@ -1,28 +1,37 @@
 <html>
   <head>
     <title>Result</title>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
   </head>
   <body>
+    <img src='{{url_for("static", filename="greencity.jpg")}}' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
     <p><a href='/'>Back</a></p>
-    <table>
-        <td>Score: </td><td>{{score}}</td>
+    <h1>Results</h1>
+    <center><table class="result">
+        <td class="tags">Score: </td><td class="vals">{{"%.2f"%score}}</td>
       </tr>
       <tr>
-        <td>Area used: </td><td>{{area_used}} / {{area_limit}}</td>
+        <td class="tags">Area used: </td><td class="vals">{{area_used}} / {{area_limit}}</td>
       </tr>
       <tr>
-        <td>Cost used: </td><td>{{cost_used}} / {{cost_limit}}</td>
+        <td class="tags">Cost used: </td><td class="vals">{{cost_used}} / {{cost_limit}}</td>
       </tr>
       <tr>
-        <td>AQI: </td><td>{{AQI}}</td>
+        <td class="tags">AQI: </td><td class="vals">{{AQI}}</td>
       </tr>
       <tr>
-        <td>Population: </td><td>{{population}}</td>
+        <td class="tags">Population: </td><td class="vals">{{population}}</td>
       </tr>
-    </table>
+    </table></center>
+    <div class='images'>
     {% for tree in trees %}
-      <img src="{{url_for('static', filename='{}.jpg'.format(tree))}}" width="200vw">
-      <h2>{{tree}} : {{trees[tree]}}</h2>
+      <div class='card'>
+        <img src="{{url_for('static', filename='{}.jpg'.format(tree))}}">
+        <div class="centered">{{tree}}: {{trees[tree]}}</div>
+      </div>
     {% endfor %}
+    </div>
   </body>
 </html>

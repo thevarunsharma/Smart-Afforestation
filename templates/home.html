@@ -1,33 +1,44 @@
 <html>
   <head>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Home</title>
   </head>
   <body>
-    <h1>Smart Afforestation Agent</h1>
-    <form action="" method="POST" onsubmit="loaderWidget()">
-      <table>
-        <tr>
-          <td>Air Quality Index (AQI): </td><td><input type="number" name="AQI" required></td>
-        </tr>
-        <tr>
-          <td>Area available for plantation: </td><td><input type="number" name="area" min="0" required></td>
-        </tr>
-        <tr>
-          <td>Cost Budget available: </td><td><input type="number" name="cost" min="0" required></td>
-        </tr>
-        <tr>
-          <td>Population of Region: </td><td><input type="number" name="population" min="0" required></td>
-        </tr>
-        <tr>
-          <td>Run Search For: </td><td><input type="number" name="runtime" min="1" value="5" required> seconds</td>
-        </tr>
-      </table>
-      <input type="submit" value="Go Green!">
-    </form>
-    <center><div id="loader"></div></center>
+    <img src='{{url_for("static", filename="background.jpg")}}' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+    <div id="loader"></div>
+    <div id="mainbody">
+      <h1>Smart Afforestation Agent</h1>
+      <form action="" method="POST" onsubmit="loaderWidget()">
+        <table class="homeform">
+          <tr>
+            <td class="tags">Air Quality Index (AQI): </td>
+            <td><input type="number" name="AQI" required placeholder="in μg/m3"></td>
+          </tr>
+          <tr>
+            <td class="tags">Area available for plantation: </td>
+            <td><input type="number" name="area" min="0" required placeholder="in sq metres"></td>
+          </tr>
+          <tr>
+            <td class="tags">Cost Budget available: </td>
+            <td><input type="number" name="cost" min="0" required placeholder="in Rupees"></td>
+          </tr>
+          <tr>
+            <td class="tags">Population of Region: </td>
+            <td><input type="number" name="population" min="0" required placeholder="count"></td>
+          </tr>
+          <tr>
+            <td class="tags">Run Search For: </td>
+            <td><input type="number" name="runtime" min="1" value="5" required placeholder="in seconds"></td>
+          </tr>
+        </table>
+        <center><input type="submit" value="Go Green!"></center>
+      </form>
+    </div>
     <script type="text/javascript" src="{{url_for('static', filename='main.js')}}"></script>
   </body>
 </html>
+

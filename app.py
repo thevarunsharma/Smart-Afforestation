@@ -26,4 +26,5 @@ def show_result():
                             area_used=result['area'], cost_used=result['cost'], population=population,
                             AQI=AQI, area_limit=area_lt, cost_limit=cost_lt)
 
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.run(debug=True)

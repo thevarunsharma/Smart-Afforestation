@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+  </head>
+  <body>
+    <h1>Smart Afforestation Agent</h1>
+    <form action="" method="POST" onsubmit="loaderWidget()">
+      <table>
+        <tr>
+          <td>Air Quality Index (AQI): </td><td><input type="number" name="AQI" required></td>
+        </tr>
+        <tr>
+          <td>Area available for plantation: </td><td><input type="number" name="area" min="0" required></td>
+        </tr>
+        <tr>
+          <td>Cost Budget available: </td><td><input type="number" name="cost" min="0" required></td>
+        </tr>
+        <tr>
+          <td>Population of Region: </td><td><input type="number" name="population" min="0" required></td>
+        </tr>
+        <tr>
+          <td>Run Search For: </td><td><input type="number" name="runtime" min="1" value="5" required> seconds</td>
+        </tr>
+      </table>
+      <input type="submit" value="Go Green!">
+    </form>
+    <center><div id="loader"></div></center>
+    <script type="text/javascript" src="{{url_for('static', filename='main.js')}}"></script>
+  </body>
+</html>
