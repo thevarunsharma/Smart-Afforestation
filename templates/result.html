@@ -1,28 +1,29 @@
 <html>
   <head>
     <title>Result</title>
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Girassol" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
   </head>
   <body>
     <img src='{{url_for("static", filename="greencity.jpg")}}' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
-    <p><a href='/'>Back</a></p>
+    <div id="back"><a href='/'>Back</a></div>
     <h1>Results</h1>
     <center><table class="result">
-        <td class="tags">Score: </td><td class="vals">{{"%.2f"%score}}</td>
+        <td class="tags"><strong>Score</strong></td><td class="vals">{{"%.2f"%score}}</td>
       </tr>
       <tr>
-        <td class="tags">Area used: </td><td class="vals">{{area_used}} / {{area_limit}}</td>
+        <td class="tags"><strong>Area used</strong></td><td class="vals">{{area_used}} / {{area_limit}}</td>
       </tr>
       <tr>
-        <td class="tags">Cost used: </td><td class="vals">{{cost_used}} / {{cost_limit}}</td>
+        <td class="tags"><strong>Cost used</strong></td><td class="vals">{{cost_used}} / {{cost_limit}}</td>
       </tr>
       <tr>
-        <td class="tags">AQI: </td><td class="vals">{{AQI}}</td>
+        <td class="tags"><strong>AQI</strong></td><td class="vals">{{AQI}}</td>
       </tr>
       <tr>
-        <td class="tags">Population: </td><td class="vals">{{population}}</td>
+        <td class="tags"><strong>Population</strong></td><td class="vals">{{population}}</td>
       </tr>
     </table></center>
     <div class='images'>
