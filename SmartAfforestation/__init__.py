@@ -12,6 +12,8 @@ def home():
 @app.route("/Result", methods=['POST'])
 def show_result():
     data = request.form
+    if not data:
+        return redirect(url_for('home'))
     AQI = int(data.get('AQI'))
     area_lt = int(data.get('area'))
     cost_lt = int(data.get('cost'))
