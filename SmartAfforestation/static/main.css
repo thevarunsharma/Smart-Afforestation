@@ -228,6 +228,10 @@ input[type=submit]{
     user-select: none;
 }
 
+#close:hover {
+    cursor: pointer;
+}
+
 #info {
     position: absolute;
     top: 1vw;
