@@ -144,6 +144,7 @@ input[type=submit]{
     height: 100%;
     border-radius: 10px;
     border: 1px groove gray;
+    transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s;
 }
 
 .centered {
