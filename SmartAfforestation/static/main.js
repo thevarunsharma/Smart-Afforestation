@@ -11,3 +11,13 @@ function loaderWidget(){
         mainbody.style.opacity = "1";
     }, time*1000);
 }
+
+function closeBoard(){
+    var board = document.getElementById("board");
+    board.style.display = "none";
+}
+
+function openBoard(){
+    var board = document.getElementById("board");
+    board.style.display = "block";
+}

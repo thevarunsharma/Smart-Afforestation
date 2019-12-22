@@ -12,6 +12,7 @@
   <body>
     <img src='{{url_for("static", filename="greencity.jpg")}}' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
     <div id="back"><a href='/'>Back</a></div>
+    <img id='info' onclick="openBoard()" src='{{url_for("static", filename="info.png")}}'>
     <h1>Results</h1>
     <center><table class="result">
         <td class="tags"><strong>Score</strong></td><td class="vals">{{"%.2f"%score}}</td>
@@ -40,5 +41,27 @@
       </div>
     {% endfor %}
     </div>
+    <div id="board">
+      <div onclick="closeBoard()" id="close">✖</div>
+      <table>
+        <tr>
+          <td width="3%"><strong>S.No.</strong></td>
+          <td width="25%"><strong>Common Name</strong></td>
+          <td width="33%"><strong>Plant Species</strong></td>
+          <td width="19%"><strong>Area occupied (sq.m)</strong></td>
+          <td width="15%"><strong>Annual Cost (in Rs)</strong></td>
+        </tr>
+        {% for i in range(1, tree_data|length + 1) %}
+        <tr>
+          <td width="3%">{{ i }}.</td>
+          <td width="25%">{{ tree_data[i-1]['Common name'] }}</td>
+          <td width="33%">{{ tree_data[i-1]['Plant Species'] }}</td>
+          <td width="19%">{{ tree_data[i-1]['Area'] }}</td>
+          <td width="15%">{{ tree_data[i-1]['Cost'] }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <script type="text/javascript" src="{{url_for('static', filename='main.js')}}"></script>
   </body>
 </html>

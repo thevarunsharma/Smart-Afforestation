@@ -16,7 +16,7 @@ h1 {
     margin: auto;
 }
 
-tr {
+.homeform tr, .result tr{
     padding: 5px;
     display: flex;
     flex-wrap: wrap;
@@ -24,7 +24,7 @@ tr {
     align-items: center;
 }
 
-td {
+.homeform td, .result td {
     width: 310px;
     align-self: center;
     margin: auto;
@@ -182,4 +182,60 @@ input[type=submit]{
     transform: scale(1.2, 1.2);
     color:black;
     background-color: white;
+}
+
+#board{
+    width: 90vw;
+    height: 90%;
+    position: fixed;
+    display: none;
+    top: 5%;
+    left: 5%;
+    right: 5%;
+    background-color: rgba(255, 248, 220, 0.7);
+    border-radius: 20px;
+    border: 2px solid black;
+    overflow-y: scroll;
+}
+
+#board table{
+    width: 85vw;
+    margin: auto;
+    margin-top: 2vw;
+    table-layout: auto;
+    border-collapse: collapse;
+}
+
+#board td{
+    text-align: center;
+    font-size: 20;
+    font-family: Cabin;
+}
+
+#close {
+    background-color: rgb(228, 11, 11);
+    border: 2px solid black;
+    border-radius: 50%;
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    font-family: Cabin;
+    text-decoration: solid;
+    padding:0;
+    font-size: 25px;
+    margin: auto;
+    text-align: center;
+    user-select: none;
+}
+
+#info {
+    position: absolute;
+    top: 1vw;
+    right: 1vw;
+    width: 40;
+    height: 40;
+}
+
+#info:hover{
+    cursor: pointer;
 }
