@@ -197,6 +197,7 @@ input[type=submit]{
     border: 2px solid black;
     overflow-y: scroll;
     transition: display 1s;
+    z-index: 2;
 }
 
 #board table{
