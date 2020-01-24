@@ -9,7 +9,7 @@ function loaderWidget(){
         mainbody.style.pointerEvents = "auto";
         loader.style.display = "none"; 
         mainbody.style.opacity = "1";
-    }, time*1000);
+    }, time*1100);
 }
 
 function closeBoard(){

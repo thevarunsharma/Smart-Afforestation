@@ -25,8 +25,8 @@ def show_result():
     agent.run_search(runtime=runtime, verbose=0)
     result = agent.get_results()
     return render_template('result.html', trees=result['trees'], score=result['score'],
-                            area_used=result['area'], cost_used=result['cost'], population=population,
-                            AQI=AQI, area_limit=area_lt, cost_limit=cost_lt, tree_data = agent.tree_data,
+                            area_used=result['area'], cost_used=result['cost'], population=population, AQI=AQI, 
+                            level=agent.Level, area_limit=area_lt, cost_limit=cost_lt, tree_data = agent.tree_data,
                             total_trees=sum(result['trees'].values()))
 
 app.config['TEMPLATES_AUTO_RELOAD'] = True
